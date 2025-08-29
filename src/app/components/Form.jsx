@@ -2,6 +2,8 @@
 import { useRef } from "react";
 import emailjs from "emailjs-com"
 import Swal from "sweetalert2";
+import servicesData from "../../data/servicesData";
+import PaperPlane from "./PaperPlane";
 
 function Form() {
   const form = useRef();
@@ -9,7 +11,7 @@ function Form() {
     e.preventDefault();
     emailjs.sendForm(
       "service_phh1wls",
-      "template_mt1xhob",
+      "template_ax9ubs2",
       form.current,
       "pjdjcpKK2IzocDlXs"
     ).then(
@@ -68,23 +70,18 @@ function Form() {
         <input className="w-full px-4 py-2 rounded-lg border-0 focus:outline-none focus:ring-0 border-b" type="number" name="phone" placeholder="مثال: 01550420276 20+" required />
       </div>
       <div className="mb-5">
-        <label htmlFor="" >حدد الموضوع ؟</label>
-        <label className="flex items-center gap-2 mt-5">
-          <input
-            type="radio"
-            name="website"
-            className="accent-cyan-500 w-5 h-5"
-          />
-          <span>انشاء موقع</span>
-        </label>
-        <label className="flex items-center gap-2 mt-5">
-          <input
-            type="radio"
-            name="MobileApp"
-            className="accent-cyan-500 w-5 h-5"
-          />
-          <span>انشاء تطبيق</span>
-        </label>
+        <label htmlFor="">حدد الموضوع ؟</label>
+        {servicesData.map((service) => (
+          <label key={service.slug} className="flex items-center gap-2 mt-5">
+            <input
+              type="checkbox"
+              name="topics"
+              value={service.title}
+              className="accent-cyan-500 w-5 h-5"
+            />
+            <span>{service.title}</span>
+          </label>
+        ))}
       </div>
       <div>
         <textarea placeholder="ملاحظات اخرى" name="message" id="" className="w-full px-4 rounded-lg border-0 focus:outline-none focus:ring-0 border-b"></textarea>
@@ -93,7 +90,7 @@ function Form() {
         <button type="submit" className="w-full bg-[#00B8CC] hover:bg-cyan-600 text-white py-2 rounded-lg font-bold transition-colors duration-300 mt-10">
           إرسال
         </button>
-        <img src="/assets/imgs/letter_send.png" alt="" className="w-80" />
+       <PaperPlane />
       </div>
     </form>
   )
