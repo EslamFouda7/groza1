@@ -71,7 +71,7 @@ export default function Home() {
         <div className="foot--servies flex justify-center">
           <Link href="/servic">
             <Bounce triggerOnce>
-              <button className="btns border border-sky-500 rounded-2xl px-6 py-2 hover:text-[#00BBCE] transition duration-300 flex items-center gap-2 group">
+              <button className="btns border border-[#00BBCE] rounded-2xl px-6 py-2 hover:text-[#00BBCE] transition duration-300 flex items-center gap-2 group">
                 <span>كل الخدمات</span>
                 <span className="transition-transform duration-300 group-hover:-translate-x-1">&gt;</span>
               </button>
@@ -107,7 +107,7 @@ export default function Home() {
         <div className="foot--portflio flex justify-center ">
           <Link href="/portflio">
             <Bounce triggerOnce>
-              <button className="btns border border-sky-500 rounded-2xl px-6 py-2 hover:text-[#00BBCE] transition duration-300 flex items-center gap-2 group">
+              <button className="btns border border-[#00BBCE] rounded-2xl px-6 py-2 hover:text-[#00BBCE] transition duration-300 flex items-center gap-2 group">
                 <span>كل الأعمال</span>
                 <span className="transition-transform duration-300 group-hover:-translate-x-1">&gt;</span>
               </button>
