@@ -10,13 +10,13 @@ function Card({ img, title, className, overlay, link, showIcon = false }) {
           <video
             src={img}
             controls
-            className="rounded-2xl w-full h-60 object-cover"
+            className="rounded-2xl w-full h-auto max-h-[250px] object-contain"
           />
         ) : (
           <img
             src={img}
             alt={title || ""}
-            className="rounded-2xl w-full h-60 object-cover"
+            className="rounded-2xl w-full h-60 "
           />
         )}
       </div>
