@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --lightanddarkground:#FAFAFA;
+}
+
+.dark {
+  --background: #171A39;
+  --foreground: #ededed;
+  --lightanddarkground:#25284b;
+  --buttonbgcolor:#25284bbe;
+  
+}
+
+body {
+  @apply bg-white text-black dark:bg-black dark:text-white;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+header {
+  background-color: var(--lightanddarkground);
+}
+.menu{
+  background-color:  var(--lightanddarkground); ;
+}
+footer{
+  background-color: var(--lightanddarkground);
+}
+.btns{
+  padding: 10px 20px;
+  background-color: var(--buttonbgcolor);
+}
+.card{
+  background-color: var(--lightanddarkground);
+}
+.contact--content{
+  background-color: var(--lightanddarkground);
+}
+.card{
+  box-shadow: none;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 184, 206, 0.5),
+              0 4px 6px -2px rgba(0, 184, 206, 0.5);
+}
+.card .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #00B8CCcc, rgba(0,0,0,0.4));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 1.5rem;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  border-radius: 1rem;
+}
+.card:hover .overlay {
+  transform: translateY(0);
+  opacity: 1;
+  
+}

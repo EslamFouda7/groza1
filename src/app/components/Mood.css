@@ -1,0 +1,146 @@
+.switch {
+  position: relative;
+  width: 60px;   /* العرض الجديد */
+  height: 30px;  /* الارتفاع الجديد */
+  margin: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: rgb(4,52,73);
+  border-radius: 20px;
+  transition: background-color 0.7s ease-in-out;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.switch:checked {
+  background-color: rgb(0, 195, 255);
+  transition: background-color 1s ease-in-out;
+}
+
+.switch:after {
+  content: '';
+  width: 26px;  /* حجم الكرة أصغر من ارتفاع الزرار بـ 4px */
+  height: 26px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  transform: translateX(0px);
+  animation: off 0.7s forwards cubic-bezier(.8, .5, .2, 1.4);
+  box-shadow: inset 2px -2px 3px rgba(53, 53, 53, 0.3);
+}
+
+@keyframes off {
+  0% {
+    transform: translateX(30px);  /* تحرك الكرة لآخر الزرار */
+    width: 26px;
+  }
+  50% {
+    width: 36px;
+    border-radius: 20px;
+  }
+  100% {
+    transform: translateX(0px);
+    width: 26px;
+  }
+}
+
+.switch:checked:after {
+  animation: on 0.7s forwards cubic-bezier(.8, .5, .2, 1.4);
+  box-shadow: inset -2px -2px 3px rgba(53, 53, 53, 0.3);
+}
+
+@keyframes on {
+  0% {
+    transform: translateX(0px);
+    width: 26px;
+  }
+  50% {
+    width: 36px;
+    border-radius: 20px;
+  }
+  100% {
+    transform: translateX(30px);
+    width: 26px;
+  }
+}
+
+/* الشمس */
+.switch:checked:before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  left: 8px;
+  top: 9px;
+  transform-origin: 40px 8px;
+  background-color: transparent;
+  box-shadow: 4px -1px 0px #fff;
+  filter: blur(0px);
+  animation: sun 0.7s forwards ease;
+}
+
+@keyframes sun {
+  0% {
+    transform: rotate(170deg);
+    background-color: transparent;
+    box-shadow: 4px -1px 0px #fff;
+    filter: blur(0px);
+  }
+  50% {
+    background-color: transparent;
+    box-shadow: 4px -1px 0px #fff;
+    filter: blur(0px);
+  }
+  90% {
+    background-color: #f5daaa;
+    box-shadow: 0 0 8px #f5deb4, 0 0 16px #f5deb4, inset 0 0 2px #efd3a3;
+    filter: blur(1px);
+  }
+  100% {
+    transform: rotate(0deg);
+    background-color: #f5daaa;
+    box-shadow: 0 0 8px #f5deb4, 0 0 16px #f5deb4, inset 0 0 2px #efd3a3;
+    filter: blur(1px);
+  }
+}
+
+/* الهلال */
+.switch:before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  left: -22px;
+  top: 9px;
+  filter: blur(1px);
+  background-color: #f5daaa;
+  box-shadow: 0 0 8px #f5deb4, 0 0 16px #f5deb4, inset 0 0 2px #efd3a3;
+  transform-origin: 40px 8px;
+  animation: moon 0.7s forwards ease;
+}
+
+@keyframes moon {
+  0% {
+    transform: rotate(0deg);
+    filter: blur(1px);
+  }
+  50% {
+    filter: blur(1px);
+  }
+  90% {
+    background-color: transparent;
+    box-shadow: 4px -1px 0px #fff;
+    filter: blur(0px);
+  }
+  100% {
+    transform: rotate(170deg);
+    background-color: transparent;
+    box-shadow: 4px -1px 0px #fff;
+    filter: blur(0px);
+  }
+}
