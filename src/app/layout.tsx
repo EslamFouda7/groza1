@@ -5,7 +5,9 @@ import ParticlesComponent from "./components/ParticlesComponent";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Whatsapp from "./components/Whatsapp";
+import Loading from "./components/Loading";
 import { Tajawal } from "next/font/google";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -16,10 +18,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
 const tajawal = Tajawal({
-  subsets: ["arabic"], 
-  weight: ["400", "500", "700"], 
+  subsets: ["arabic"],
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -37,13 +38,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${tajawal.className} antialiased`}
       >
-        <Header/>
+        <Loading>
+          <Header />
           <div className="fixed inset-0 -z-10">
-            <ParticlesComponent id="circle"/>
+            <ParticlesComponent id="circle" />
           </div>
           <main className="relative z-10">{children}</main>
-          <Whatsapp/>
-          <Footer/>
+          <Whatsapp />
+          <Footer />
+        </Loading>
       </body>
     </html>
   );

@@ -7,14 +7,14 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --lightanddarkground:#FAFAFA;
+  --lightanddarkground:#fafafa;
 }
 
 .dark {
-  --background: #171A39;
+  --background: #052A45;
   --foreground: #ededed;
-  --lightanddarkground:#25284b;
-  --buttonbgcolor:#25284bbe;
+  --lightanddarkground:#05283f;
+  --buttonbgcolor:#05283f;
   
 }
 

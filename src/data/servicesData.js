@@ -89,7 +89,7 @@ export const servicesData = [
        {
         title: "موقع الشركه (GROZA)",
         img: "/assets/imgs/ourcompany.png",
-        link: "https://groza-ashen.vercel.app/",
+        link: "https://groza-7.netlify.app/",
       },
       {
         title: "موفع شخصي (Portfolio)",
@@ -257,22 +257,22 @@ export const servicesData = [
     works: [
       {
         title: "فيديو تعريفي لخدمة",
-        img: "/assets/imgs/Therelax.mp4",
+        img: "https://res.cloudinary.com/dgvtwpet4/video/upload/v1756040780/The_relax_p6fhhv.mp4",
         link: "",
       },
       {
         title: "إعلان موشن جرافيك",
-        img: "/assets/imgs/motion.mp4",
+        img: "https://res.cloudinary.com/dgvtwpet4/video/upload/v1756039326/motion_GFX_with_out_SF_1121_umtj1t.mp4",
         link: "",
       },
       {
         title: "إعلان موشن جرافيك",
-        img: "/assets/imgs/doneVFX.mp4",
+        img: "https://res.cloudinary.com/dgvtwpet4/video/upload/v1756040218/done_sfx_gt0tua.mp4",
         link: "",
       },
       {
         title: "إعلان موشن جرافيك",
-        img: "/assets/imgs/donesfx.mp4",
+        img: "https://res.cloudinary.com/dgvtwpet4/video/upload/v1756041104/done_sfx_yzndgc.mp4",
         link: "",
       },
     ],
